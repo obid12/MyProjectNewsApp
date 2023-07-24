@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_normal"
+    android:layout_marginHorizontal="24dp"
+    >
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/til_meter"
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Search"
+      android:textColorHint="@color/GrayscalePlaceholder"
+      app:boxBackgroundColor="@color/neutral_80"
+      app:boxCornerRadiusBottomEnd="@dimen/spacing_small"
+      app:boxCornerRadiusBottomStart="@dimen/spacing_small"
+      app:boxCornerRadiusTopEnd="@dimen/spacing_small"
+      app:boxCornerRadiusTopStart="@dimen/spacing_small"
+      app:boxStrokeColor="@color/primary"
+      app:boxStrokeErrorColor="@color/error"
+      app:hintTextColor="@color/primary"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:startIconDrawable="@drawable/ic_search"
+      app:startIconTint="@color/GrayscaleBodyText"
+      >
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_meter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:digits="0123456789"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        style="@style/Font.Medium.S"
+        android:maxLength="12"
+        android:paddingHorizontal="@dimen/spacing_normal"
+        android:textColor="@color/primary"
+        android:textColorHint="@color/GrayscalePlaceholder"
+        android:textSize="@dimen/font_small"
+        />
+
+  </com.google.android.material.textfield.TextInputLayout>
+  <ImageView
+      android:id="@+id/icon_set"
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:src="@drawable/ic_set_search"
+      android:layout_marginEnd="12dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="@id/til_meter"
+      app:layout_constraintTop_toTopOf="@+id/til_meter"
+      app:tint="@color/GrayscaleBodyText"
+      android:contentDescription="@string/app_name"
+      />
+
+  <ImageView
+      android:id="@+id/icon_delete"
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:src="@drawable/ic_delete"
+      android:layout_marginEnd="12dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="@id/til_meter"
+      app:layout_constraintTop_toTopOf="@+id/til_meter"
+      app:tint="@color/GrayscaleBodyText"
+      android:contentDescription="@string/app_name"
+      android:visibility="gone"
+      />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

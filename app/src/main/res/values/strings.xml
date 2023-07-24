@@ -1,0 +1,12 @@
+<resources>
+  <string name="app_name">My Application News App</string>
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+
+  <string name="bottom_navigation.title.explore">Explore</string>
+  <string name="bottom_navigation.title.home">Home</string>
+  <string name="bottom_navigation.title.bookmark">Bookmark</string>
+  <string name="bottom_navigation.title.profile">Profile</string>
+
+  <string name="img.content_description">APP</string>
+</resources>

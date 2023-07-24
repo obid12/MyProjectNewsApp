@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/neutral_80"
+    android:orientation="vertical"
+    tools:context=".presentation.home.HomeFragment"
+    >
+
+  <include
+      android:id="@+id/toolbar_view"
+      layout="@layout/toolbar_view"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+  <androidx.coordinatorlayout.widget.CoordinatorLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+      <com.google.android.material.appbar.CollapsingToolbarLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fitsSystemWindows="true"
+          app:layout_scrollFlags="scroll|exitUntilCollapsed"
+          >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+          <include
+              layout="@layout/view_input_news"
+              app:layout_constraintTop_toBottomOf="@+id/toolbar_view"
+              />
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginHorizontal="24dp"
+              android:layout_marginTop="@dimen/spacing_normal"
+              android:orientation="horizontal"
+              >
+
+            <TextView
+                style="@style/Font.Bold.M"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/GrayscaleBodyText"
+                android:text="Trending"
+                />
+
+            <TextView
+                style="@style/Font.Medium.S"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/GrayscaleBodyText"
+                android:text="See all"
+                />
+          </LinearLayout>
+
+          <include
+              android:id="@+id/view_news_popularity"
+              layout="@layout/item_popular"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:clipToPadding="false"
+              tools:itemCount="1"
+              />
+        </LinearLayout>
+
+      </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+      <com.google.android.material.tabs.TabLayout
+          android:id="@+id/tabs"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/neutral_80"
+          app:tabGravity="fill"
+          app:tabMode="scrollable"
+          android:clipToPadding="false"
+          android:paddingHorizontal="20dp"
+          app:tabTextColor="@color/primary"
+          />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        >
+
+      <androidx.viewpager2.widget.ViewPager2
+          android:id="@+id/viewPager"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_gravity="center"
+          />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/spacing_small"
+    >
+
+  <ImageView
+      android:id="@+id/img_news_recent"
+      android:layout_width="96dp"
+      android:layout_height="96dp"
+      android:layout_marginVertical="@dimen/spacing_small"
+      android:layout_marginStart="@dimen/spacing_small"
+      android:layout_marginTop="@dimen/spacing_small"
+      android:scaleType="fitXY"
+      android:contentDescription="@string/app_name"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:src="@drawable/ic_launcher_background"
+      />
+
+  <TextView
+      android:id="@+id/txt_title"
+      style="@style/Font.Medium.M"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/spacing_tiny"
+      android:layout_marginEnd="@dimen/spacing_small"
+      android:ellipsize="end"
+      android:maxLines="2"
+      android:includeFontPadding="false"
+      android:textColor="@color/GrayscaleBodyText"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/img_news_recent"
+      app:layout_constraintTop_toTopOf="@+id/img_news_recent"
+      tools:text="Ukraine's President Zelensky to BBC: Blood money being paid Ukraine's President Zelensky to BBC: Blood money being paid"
+      />
+
+  <ImageView
+      android:id="@+id/img_source"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_marginStart="4dp"
+      android:layout_marginTop="4dp"
+      app:layout_constraintStart_toEndOf="@+id/img_news_recent"
+      app:layout_constraintTop_toBottomOf="@+id/txt_title"
+      tools:src="@color/design_default_color_error"
+      />
+
+  <TextView
+      android:id="@+id/txt_source"
+      style="@style/Font.Bold.XS"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="4dp"
+      android:layout_marginEnd="8dp"
+      android:includeFontPadding="false"
+      android:textColor="@color/GrayscaleBodyText"
+      app:layout_constraintBottom_toBottomOf="@+id/img_source"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/img_source"
+      app:layout_constraintTop_toTopOf="@+id/img_source"
+      tools:text="BBC News"
+      />
+
+  <ImageView
+      android:id="@+id/imageView2"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_marginStart="4dp"
+      android:src="@drawable/ic_time"
+      app:layout_constraintBottom_toBottomOf="@+id/img_news_recent"
+      app:layout_constraintStart_toEndOf="@+id/img_news_recent"
+      />
+
+  <TextView
+      android:id="@+id/txt_date"
+      style="@style/Font.Medium.XS"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="4dp"
+      android:layout_marginEnd="@dimen/spacing_small"
+      android:includeFontPadding="false"
+      android:textColor="@color/GrayscaleBodyText"
+      app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/imageView2"
+      app:layout_constraintTop_toTopOf="@+id/imageView2"
+      tools:text="4h ago"
+      />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
