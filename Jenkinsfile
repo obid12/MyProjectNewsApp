@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Compile') {
             steps {
-                echo 'Hello World'
+                sh './gradlew compileDebugSources'
             }
         }
     }
