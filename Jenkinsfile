@@ -1,6 +1,6 @@
 pipeline {
     agent {
-      label 'android-agent'
+      label 'android'
     }
 
     tools {
