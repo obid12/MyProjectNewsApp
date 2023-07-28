@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-            jdk 'JBR17'
+            jdk 'jbr17'
         }
     environment {
       ANDROID_HOME = "C:/Users/GLI/AppData/Local/Android/Sdk"
