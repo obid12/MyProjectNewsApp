@@ -3,7 +3,7 @@ pipeline {
 
     tools {
 
-            jdk 'jbr-17'
+            jdk 'JDK 17'
         }
     environment {
       ANDROID_HOME = "C:/Users/GLI/AppData/Local/Android/Sdk"
