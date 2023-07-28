@@ -12,7 +12,11 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                sh 'java -version'
+                sh '''
+                  env | grep -e PATH -e JAVA_HOME
+                  which java
+                  java -version
+                '''
                 sh 'chmod +x ./gradlew'
                 sh './gradlew compileDebugSources'
             }
