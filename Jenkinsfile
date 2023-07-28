@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-      ANDROID_HOME = "C:\Users\GLI\AppData\Local\Android\Sdk"
+      ANDROID_HOME = "C:/Users/GLI/AppData/Local/Android/Sdk"
     }
     stages {
         stage('Compile') {
