@@ -6,6 +6,7 @@ pipeline {
     }
     environment {
       ANDROID_HOME = 'C:\\Users\\GLI\\AppData\\Local\\Android\\Sdk'
+      GRADLE_HOME = "C:\\Users\\GLI\\.gradle"
     }
     stages {
         stage('Clean Gradle Cache') {
