@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-      label 'android'
-    }
+    agent any
 
     tools {
        jdk 'JAVA_HOME'
