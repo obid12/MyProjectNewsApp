@@ -27,6 +27,24 @@ pipeline {
                 }
             }
         }
+
+         stage('Build APK') {
+            steps {
+                // Set the path to the Gradle executable
+                def gradleBat = "${env.GRADLE_HOME}/bin/gradle.bat"
+
+                // Run the Gradle build to create the APK
+                // Adjust the command based on your project's setup and flavor (e.g., assembleDebug, assembleRelease)
+                bat "${gradleBat} assembleDebug"
+            }
+
+            post {
+                success {
+                    // Archive the APK file as a build artifact
+                    archiveArtifacts artifacts: 'app/build/outputs/apk/debug/*.apk', fingerprint: true
+                }
+            }
+        }
     }
 }
 
