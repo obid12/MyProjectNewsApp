@@ -8,6 +8,14 @@ pipeline {
       ANDROID_HOME = 'C:\\Users\\GLI\\AppData\\Local\\Android\\Sdk'
     }
     stages {
+        stage('Clean Gradle Cache') {
+                    steps {
+                        script {
+                            // Clear Gradle cache
+                            deleteDir()
+                        }
+                    }
+                }
         stage('Compile') {
             steps {
                 bat 'java -version'
