@@ -5,7 +5,7 @@ pipeline {
        jdk 'JAVA_HOME'
     }
     environment {
-      ANDROID_HOME = "C:/Users/GLI/AppData/Local/Android/Sdk"
+      ANDROID_HOME = 'C:\\Users\\GLI\\AppData\\Local\\Android\\Sdk'
     }
     stages {
         stage('Compile') {
