@@ -11,7 +11,6 @@ pipeline {
         stage('Compile') {
             steps {
                 bat 'java -version'
-                bat 'chmod +x ./gradlew'
                 bat './gradlew compileDebugSources'
             }
         }
