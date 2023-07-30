@@ -19,7 +19,7 @@ pipeline {
         stage('Compile') {
             steps {
                 bat 'java -version'
-                bat './gradlew compileDebugSources'
+                bat 'gradlew.bat clean assembleDebug'
             }
         }
     }
