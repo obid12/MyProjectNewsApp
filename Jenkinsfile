@@ -20,12 +20,9 @@ pipeline {
         stage('Compile') {
             steps {
                 bat 'java -version'
-                steps {
-                    // Change to your Android project directory
-                    dir('C:\\Users\\GLI\\.jenkins\\workspace\\coba dulu@script\\bd0e1eaec9584cb3fa627ed4dd4a6ef24c80866f884b4e89cd45f9e4e5ae105f') {
-                        // Run Gradle Wrapper
-                        bat 'gradlew.bat clean assembleDebug'
-                    }
+                dir('C:\\Users\\GLI\\.jenkins\\workspace\\coba dulu@script\\bd0e1eaec9584cb3fa627ed4dd4a6ef24c80866f884b4e89cd45f9e4e5ae105f') {
+                    // Run Gradle Wrapper
+                    bat 'gradlew.bat clean assembleDebug'
                 }
             }
         }
