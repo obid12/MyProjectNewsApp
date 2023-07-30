@@ -1,21 +1,34 @@
-pipeline {
-    agent {
-      label 'android'
-    }
+// pipeline {
+//     agent {
+//       label 'android'
+//     }
+//
+//     tools {
+//        jdk 'JAVA_HOME'
+//     }
+//     environment {
+//       ANDROID_HOME = "C:/Users/GLI/AppData/Local/Android/Sdk"
+//     }
+//     stages {
+//         stage('Compile') {
+//             steps {
+//                 sh 'java -version'
+//                 sh 'chmod +x ./gradlew'
+//                 sh './gradlew compileDebugSources'
+//             }
+//         }
+//     }
+// }
 
-    tools {
-       jdk 'JAVA_HOME'
-    }
-    environment {
-      ANDROID_HOME = "C:/Users/GLI/AppData/Local/Android/Sdk"
-    }
+pipeline {
+    agent any
+
     stages {
-        stage('Compile') {
+        stage('Hello') {
             steps {
-                sh 'java -version'
-                sh 'chmod +x ./gradlew'
-                sh './gradlew compileDebugSources'
+                echo 'Hello World'
             }
         }
     }
 }
+
