@@ -10,9 +10,9 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                sh 'java -version'
-                sh 'chmod +x ./gradlew'
-                sh './gradlew compileDebugSources'
+                bat 'java -version'
+                bat 'chmod +x ./gradlew'
+                bat './gradlew compileDebugSources'
             }
         }
     }
