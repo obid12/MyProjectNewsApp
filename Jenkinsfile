@@ -9,7 +9,13 @@ pipeline {
     stages {
         stage('Delete Workspace Dir') {
             steps {
-               deleteDir()
+               script {
+                   try {
+                       deleteDir()
+                   } catch (Exception e) {
+                       echo "Error deleting workspace: ${e.message}"
+                   }
+               }
             }
         }
 
