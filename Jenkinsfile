@@ -24,7 +24,7 @@ pipeline {
         stage('Clean Gradle Cache') {
             steps {
                 script {
-                  dir('@{env.LOCATION_PROJECT}') {
+                  dir('${env.LOCATION_PROJECT}') {
                     bat "gradlew.bat clean"
                   }
                 }
