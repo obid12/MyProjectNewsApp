@@ -19,16 +19,14 @@ pipeline {
             }
         }
 
-        stage('Checkout') {
-            steps {
-                bat 'https://github.com/obid12/MyProjectNewsApp.git'
-            }
-        }
+
 
         stage('Clean Gradle Cache') {
             steps {
                 script {
-                  bat "gradlew.bat clean"
+                  dir('@{env.LOCATION_PROJECT}') {
+                    bat "gradlew.bat clean"
+                  }
                 }
             }
         }
