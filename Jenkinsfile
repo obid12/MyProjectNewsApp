@@ -54,6 +54,12 @@ pipeline {
                   bat 'ping -n 10 127.0.0.1 > nul'
                 }
             }
+
+            post {
+                always {
+                    bat 'taskkill /F /IM emulator.exe /T'
+                }
+            }
         }
 
         stage('Unit Tests') {
@@ -61,12 +67,6 @@ pipeline {
                 dir(env.LOCATION_PROJECT) {
                     bat "gradlew.bat test"
                 }
-            }
-        }
-
-        post {
-            always {
-                bat 'taskkill /F /IM emulator.exe /T'
             }
         }
     }
