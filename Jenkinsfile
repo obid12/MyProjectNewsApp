@@ -19,13 +19,19 @@ pipeline {
             }
         }
 
-        stage('Clean Gradle Cache') {
-            steps {
-                script {
-                  bat ".\\gradlew.bat clean"
-                }
-            }
-        }
+//         stage('Checkout') {
+//             steps {
+//                 bat 'git clone https://github.com/user/repo.git'
+//             }
+//         }
+//
+//         stage('Clean Gradle Cache') {
+//             steps {
+//                 script {
+//                   bat ".\\gradlew.bat clean"
+//                 }
+//             }
+//         }
 //         stage('Compile & Build APK') {
 //             steps {
 // //                 dir('@{LOCATION_PROJECT}') {
