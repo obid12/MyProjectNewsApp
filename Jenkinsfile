@@ -32,13 +32,20 @@ pipeline {
         stage('Start Emulator') {
             steps {
                 // Start the Android emulator
-                androidEmulator(
-                    avdName: 'Pixel_2_API_33', // Specify the name of the Android Virtual Device (AVD)
-                    osVersion: '33', // Specify the Android OS version
-                    screenDensity: '420', // Specify the screen density
-                    screenResolution: '1080x1920', // Specify the screen resolution
-                    emulatorOptions: '-no-window' // Additional emulator options, if needed
-                )
+                script{
+                  try{
+                    androidEmulator(
+                        avdName: 'Pixel_2_API_33', // Specify the name of the Android Virtual Device (AVD)
+                        osVersion: '33', // Specify the Android OS version
+                        screenDensity: '420', // Specify the screen density
+                        screenResolution: '1080x1920', // Specify the screen resolution
+                        emulatorOptions: '-no-window' // Additional emulator options, if needed
+                    )
+                  }catch (Exception e) {
+                      echo "Error start emulator: ${e.message}"
+                  }
+                }
+
             }
         }
 
