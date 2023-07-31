@@ -18,19 +18,14 @@ pipeline {
                }
             }
         }
-//
-//         stage('Clean Gradle Cache') {
-//             steps {
-//                 script {
-//                   // Clear Gradle cache
-//                   deleteDir()
-// //                   dir('@{LOCATION_PROJECT}') {
-// //                     bat "gradlew.bat clean"
-// //                   }
-//                   bat "gradlew.bat clean"
-//                 }
-//             }
-//         }
+
+        stage('Clean Gradle Cache') {
+            steps {
+                script {
+                  bat "gradlew.bat clean"
+                }
+            }
+        }
 //         stage('Compile & Build APK') {
 //             steps {
 // //                 dir('@{LOCATION_PROJECT}') {
