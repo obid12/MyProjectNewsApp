@@ -10,21 +10,24 @@ pipeline {
         stage('Clean Gradle Cache') {
             steps {
                 script {
-                    // Clear Gradle cache
-                    deleteDir()
-                    dir('@{LOCATION_PROJECT}') {
-                      bat "gradlew.bat clean"
-                  }
+                  // Clear Gradle cache
+                  deleteDir()
+//                   dir('@{LOCATION_PROJECT}') {
+//                     bat "gradlew.bat clean"
+//                   }
+                  bat "gradlew.bat clean"
                 }
             }
         }
         stage('Compile & Build APK') {
             steps {
-                dir('@{LOCATION_PROJECT}') {
-                    // Run Gradle Wrapper
-                    bat 'java -version'
-                    bat 'gradlew.bat clean assembleDebug'
-                }
+//                 dir('@{LOCATION_PROJECT}') {
+//                     // Run Gradle Wrapper
+//                     bat 'java -version'
+//                     bat 'gradlew.bat clean assembleDebug'
+//                 }
+                bat 'java -version'
+                bat 'gradlew.bat clean assembleDebug'
             }
 //
 //             post {
@@ -37,9 +40,11 @@ pipeline {
 
         stage('Unit Tests') {
             steps {
-                dir('@{LOCATION_PROJECT}') {
-                    bat "gradlew.bat test"
-                }
+//                 dir('@{LOCATION_PROJECT}') {
+//                     bat "gradlew.bat test"
+//                 }
+
+                bat "gradlew.bat test"
             }
         }
     }
