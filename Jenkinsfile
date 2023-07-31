@@ -21,7 +21,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                bat 'https://github.com/obid12/MyProjectNewsApp.git
+                bat 'https://github.com/obid12/MyProjectNewsApp.git'
             }
         }
 
