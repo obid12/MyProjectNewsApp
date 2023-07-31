@@ -22,7 +22,7 @@ pipeline {
         stage('Clean Gradle Cache') {
             steps {
                 script {
-                  bat "gradlew.bat clean"
+                  bat ".\\gradlew.bat clean"
                 }
             }
         }
