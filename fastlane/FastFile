@@ -18,8 +18,7 @@ platform :android do
 
     firebase_app_distribution(
         app: "1:900612138286:android:f84a749cba9daad96bc6bf",
-        groups: "group-two",
-        release_notes: "Lots of amazing new features to test out!",
+        release_notes: "HAHAHA",
         firebase_cli_token: "1//0g2YwJ-ZSs1BgCgYIARAAGBASNwF-L9Irk-jUQlzHZuP9x1-3ckcjDIwzjxi5hUxrs_Maydo2_jduZB3vQHHQjYJPmcS_kR5bM6w"
     )
   end
