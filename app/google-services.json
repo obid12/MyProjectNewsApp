@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "900612138286",
+    "project_id": "coba-f75ec",
+    "storage_bucket": "coba-f75ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900612138286:android:f84a749cba9daad96bc6bf",
+        "android_client_info": {
+          "package_name": "com.example.myapplicationnewsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "900612138286-svtblg0v34a4ickm8haq7r0tvg86a6mo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz2pSHXYBNGBjtrcQYlbo3TIxmZljd358"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "900612138286-svtblg0v34a4ickm8haq7r0tvg86a6mo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

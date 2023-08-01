@@ -1,0 +1,32 @@
+default_platform(:android)
+
+platform :android do
+
+  desc "Build"
+  lane :build do
+    gradle(task: "clean assembleRelease")
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Submit a new Beta Build to Firebase App Distribution"
+  lane :beta do
+    build
+
+    firebase_app_distribution(
+        app: "1:900612138286:android:f84a749cba9daad96bc6bf",
+        groups: "group-two",
+        release_notes: "Lots of amazing new features to test out!",
+        firebase_cli_token: "1//0g2YwJ-ZSs1BgCgYIARAAGBASNwF-L9Irk-jUQlzHZuP9x1-3ckcjDIwzjxi5hUxrs_Maydo2_jduZB3vQHHQjYJPmcS_kR5bM6w"
+    )
+  end
+
+#   desc "Deploy a new version to the Google Play"
+#   lane :deploy do
+#     gradle(task: "clean assembleRelease")
+#     upload_to_play_store
+#   end
+end
