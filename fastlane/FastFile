@@ -1,14 +1,14 @@
 default_platform(:android)
 
-available_build_variants = ['debug', 'release', 'beta']
+  available_build_variants = ['debug', 'release', 'beta']
 
-def validate_build_variant(build_variant)
-  unless available_build_variants.include?(build_variant)
-    UI.user_error!("Invalid build variant. Available options are: #{available_build_variants.join(', ')}")
+  def validate_build_variant(build_variant)
+    unless available_build_variants.include?(build_variant)
+      UI.user_error!("Invalid build variant. Available options are: #{available_build_variants.join(', ')}")
+    end
   end
-end
 
-platform :android do
+  platform :android do
 
   desc "Build"
   lane :build do |options|
