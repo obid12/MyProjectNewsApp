@@ -2,35 +2,31 @@ default_platform(:android)
 
   available_build_variants = ['debug', 'release', 'beta']
 
-  def validate_build_variant(build_variant)
-    unless available_build_variants.include?(build_variant)
-      UI.user_error!("Invalid build variant. Available options are: #{available_build_variants.join(', ')}")
-    end
-  end
-
   platform :android do
 
   desc "Build"
   lane :build do |options|
     build_variant = options[:build_variant] || 'release' # Default to 'release' if no variant is specified
-    validate_build_variant(build_variant)
-    gradle(task: "clean assembleRelease")
+    gradle(
+      task: "clean assemble",
+      build_type: "beta"
+    )
+
   end
 
   desc "Runs all the tests"
   lane :test do |options|
-
     build_variant = options[:build_variant] || 'debug' # Default to 'debug' if no variant is specified
-    validate_build_variant(build_variant)
-
-    gradle(task: "test")
+    gradle(
+      task: "test",
+      build_type: "beta"
+    )
   end
 
   desc "Submit a new Beta Build to Firebase App Distribution"
   lane :deploy_to_firebase do |options|
 
     build_variant = options[:build_variant] || 'release' # Default to 'release' if no variant is specified
-    validate_build_variant(build_variant)
 
     build
 
