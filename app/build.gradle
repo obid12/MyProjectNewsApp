@@ -10,7 +10,12 @@ plugins {
 
 android {
   signingConfigs {
-    release {}
+    release {
+      storeFile file('C:\\Users\\GLI\\keystore\\keystore.jks')
+      storePassword 'obidiahawai12'
+      keyAlias 'key0'
+      keyPassword 'obidiahawai12'
+    }
   }
   namespace 'com.example.myapplicationnewsapp'
   compileSdk 33
