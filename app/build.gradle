@@ -35,11 +35,14 @@ android {
     debug {
       minifyEnabled false
       debuggable true
+      applicationIdSuffix = ".debug"
+
     }
 
     beta {
       minifyEnabled true
       debuggable false
+      applicationIdSuffix = ".beta"
     }
 
     release {
