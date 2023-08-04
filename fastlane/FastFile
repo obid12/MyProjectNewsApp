@@ -1,12 +1,11 @@
 default_platform(:android)
 
-  available_build_variants = ['debug', 'release', 'beta']
-
   platform :android do
 
   desc "Build"
-  lane :build do |options|
-    build_variant = options[:build_variant] || 'release' # Default to 'release' if no variant is specified
+  lane :build do
+#   |options|
+#     build_variant = options[:build_variant] || 'release' # Default to 'release' if no variant is specified
     gradle(
       task: "clean assemble",
       build_type: "beta"
@@ -15,8 +14,9 @@ default_platform(:android)
   end
 
   desc "Runs all the tests"
-  lane :test do |options|
-    build_variant = options[:build_variant] || 'debug' # Default to 'debug' if no variant is specified
+  lane :test do
+#   |options|
+#     build_variant = options[:build_variant] || 'debug' # Default to 'debug' if no variant is specified
     gradle(
       task: "test",
       build_type: "beta"
@@ -24,9 +24,10 @@ default_platform(:android)
   end
 
   desc "Submit a new Beta Build to Firebase App Distribution"
-  lane :deploy_to_firebase do |options|
-
-    build_variant = options[:build_variant] || 'release' # Default to 'release' if no variant is specified
+  lane :deploy_to_firebase do
+#   |options|
+#
+#     build_variant = options[:build_variant] || 'release' # Default to 'release' if no variant is specified
 
     build
 
