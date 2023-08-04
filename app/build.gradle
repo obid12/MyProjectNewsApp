@@ -9,6 +9,9 @@ plugins {
 }
 
 android {
+  signingConfigs {
+    release {}
+  }
   namespace 'com.example.myapplicationnewsapp'
   compileSdk 33
 
@@ -20,7 +23,7 @@ android {
     versionName "1.1"
 
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    signingConfig signingConfigs.debug
+    signingConfig signingConfigs.release
   }
 
   buildTypes {
