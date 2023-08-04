@@ -8,7 +8,7 @@ default_platform(:android)
 #     build_variant = options[:build_variant] || 'release' # Default to 'release' if no variant is specified
     gradle(
       task: "clean assemble",
-      build_type: "beta"
+      build_type: "debug"
     )
 
   end
@@ -19,7 +19,7 @@ default_platform(:android)
 #     build_variant = options[:build_variant] || 'debug' # Default to 'debug' if no variant is specified
     gradle(
       task: "test",
-      build_type: "beta"
+      build_type: "debug"
     )
   end
 
