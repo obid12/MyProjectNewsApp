@@ -48,7 +48,7 @@ pipeline {
         stage('Firebase') {
             steps {
                 dir(env.LOCATION_PROJECT) {
-                    bat "bundle exec fastlane beta"
+                    bat "bundle exec fastlane deploy_to_firebase"
                 }
             }
         }
