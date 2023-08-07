@@ -11,6 +11,9 @@ pipeline {
     stages {
         stage('Configure Environment') {
             steps {
+                bat "rake install"
+                bat "rake release"
+
                 bat"fastlane add_plugin increment_version_code"
                 bat"fastlane add_plugin increment_version_name"
             }
