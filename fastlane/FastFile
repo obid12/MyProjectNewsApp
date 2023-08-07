@@ -36,7 +36,8 @@ default_platform(:android)
       properties: {
         "android.injected.version.code" => versionCode,
         "android.injected.version.name" => versionName,
-      }
+      },
+      build_type: "debug"
     )
 
     firebase_app_distribution(
