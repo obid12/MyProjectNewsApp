@@ -40,11 +40,27 @@ pipeline {
 //                 }
 //             }
 //         }
+        stage('name') {
+            steps {
+                dir(env.LOCATION_PROJECT) {
+                    bat "bundle exec fastlane set_version_name"
+                }
+            }
+        }
+
+
+        stage('code') {
+            steps {
+                dir(env.LOCATION_PROJECT) {
+                    bat "bundle exec fastlane set_version_code"
+                }
+            }
+        }
 
         stage('Firebase') {
             steps {
                 dir(env.LOCATION_PROJECT) {
-                    bat "bundle exec fastlane deploy_to_firebase VERSION_CODE:${VERSION_CODE} VERSION_NAME:${VERSION_NAME}'"
+                    bat "bundle exec fastlane deploy_to_firebase"
                 }
             }
         }

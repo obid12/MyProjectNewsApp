@@ -2,40 +2,40 @@ default_platform(:android)
 
   platform :android do
 
-  desc "Build"
-  lane :build do
-#   |options|
-#     build_variant = options[:build_variant] || 'release' # Default to 'release' if no variant is specified
-    gradle(
-      task: "clean assemble",
-      build_type: "debug"
-    )
-
+#   desc "Build"
+#   lane :build do
+# #   |options|
+# #     build_variant = options[:build_variant] || 'release' # Default to 'release' if no variant is specified
+#     gradle(
+#       task: "clean assemble",
+#       build_type: "debug"
+#     )
+#
+#   end
+#
+#   desc "Runs all the tests"
+#   lane :test do
+# #   |options|
+# #     build_variant = options[:build_variant] || 'debug' # Default to 'debug' if no variant is specified
+#     gradle(
+#       task: "test",
+#       build_type: "debug"
+#     )
+#   end
+  lane :set_version_name do
+    version_name = "5.0.0" # Change this to the desired version name
+    gradle(task: "setVersionName", properties: { versionName: version_name }, build_type: "debug")
   end
 
-  desc "Runs all the tests"
-  lane :test do
-#   |options|
-#     build_variant = options[:build_variant] || 'debug' # Default to 'debug' if no variant is specified
-    gradle(
-      task: "test",
-      build_type: "debug"
-    )
+  lane :set_version_code do
+    version_code = 5 # Change this to the desired version code
+    gradle(task: "setVersionCode", properties: { versionCode: version_code }, build_type: "debug")
   end
 
-  desc "Submit a new Beta Build to Firebase App Distribution"
-  lane :deploy_to_firebase do |options|
 
-    versionCode = ENV['VERSION_CODE']
-    versionName = ENV['VERSION_NAME']
-    puts "VERSION CODE = " + versionCode
-    puts "VERSION NAME = " + versionName
+  lane :deploy_to_firebase do
 
-
-    increment_version_name(gradle_file_path: "app/build.gradle", version_name: versionName)
-    increment_version_code(gradle_file_path: "app/build.gradle", version_code: versionCode)
-
-    build_android_app(task:"clean assemble")
+    gradle(task:"clean assemble", build_type: "debug")
 
     firebase_app_distribution(
         app: "1:900612138286:android:a321b7388df40ea76bc6bf",
@@ -44,9 +44,4 @@ default_platform(:android)
     )
   end
 
-#   desc "Deploy a new version to the Google Play"
-#   lane :deploy do
-#     gradle(task: "clean assembleRelease")
-#     upload_to_play_store
-#   end
 end
