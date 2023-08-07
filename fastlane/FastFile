@@ -43,7 +43,7 @@ default_platform(:android)
 #     increment_version_name(gradle_file_path: "app/build.gradle", version_name: versionName)
 #     increment_version_code(gradle_file_path: "app/build.gradle", version_code: versionCode)
 
-    build_android_app(task:"clean assemble")
+#     build_android_app(task:"clean assemble")
 
     firebase_app_distribution(
         app: "1:900612138286:android:a321b7388df40ea76bc6bf",
