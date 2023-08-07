@@ -14,31 +14,31 @@ pipeline {
             }
         }
 
-        stage('Clean Gradle Cache') {
-            steps {
-                script {
-                  dir(env.LOCATION_PROJECT) {
-                    bat "gradlew.bat clean"
-                  }
-                }
-            }
-        }
-
-        stage('Compile') {
-            steps {
-                dir(env.LOCATION_PROJECT) {
-                    bat "bundle exec fastlane build"
-                }
-            }
-        }
-
-        stage('Testing') {
-            steps {
-                dir(env.LOCATION_PROJECT) {
-                    bat "bundle exec fastlane test"
-                }
-            }
-        }
+//         stage('Clean Gradle Cache') {
+//             steps {
+//                 script {
+//                   dir(env.LOCATION_PROJECT) {
+//                     bat "gradlew.bat clean"
+//                   }
+//                 }
+//             }
+//         }
+//
+//         stage('Compile') {
+//             steps {
+//                 dir(env.LOCATION_PROJECT) {
+//                     bat "bundle exec fastlane build"
+//                 }
+//             }
+//         }
+//
+//         stage('Testing') {
+//             steps {
+//                 dir(env.LOCATION_PROJECT) {
+//                     bat "bundle exec fastlane test"
+//                 }
+//             }
+//         }
 
         stage('Firebase') {
             steps {
