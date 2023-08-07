@@ -32,7 +32,7 @@ default_platform(:android)
     puts "VERSION NAME = " + versionName
 
     gradle(
-      task: "assemble"
+      task: "assemble",
       properties: {
         "android.injected.version.code" => versionCode,
         "android.injected.version.name" => versionName,
