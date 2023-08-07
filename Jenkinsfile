@@ -11,8 +11,8 @@ pipeline {
     stages {
         stage('Configure Environment') {
             steps {
-                bat"fastlane add_plugin increment_version_code"
-                bat"fastlane add_plugin increment_version_name"
+                bat"bundle exec fastlane add_plugin increment_version_code"
+                bat"bundle exec fastlane add_plugin increment_version_name"
             }
         }
 
@@ -45,7 +45,7 @@ pipeline {
         stage('Firebase') {
             steps {
                 dir(env.LOCATION_PROJECT) {
-                    bat "fastlane deploy_to_firebase VERSION_CODE:${VERSION_CODE} VERSION_NAME:${VERSION_NAME}'"
+                    bat "bundle exec fastlane deploy_to_firebase VERSION_CODE:${VERSION_CODE} VERSION_NAME:${VERSION_NAME}'"
                 }
             }
         }
