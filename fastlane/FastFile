@@ -31,9 +31,17 @@ default_platform(:android)
     puts "VERSION CODE = " + versionCode
     puts "VERSION NAME = " + versionName
 
+    gradle(
+      task: "assemble"
+      properties: {
+        "android.injected.version.code" => versionCode,
+        "android.injected.version.name" => versionName,
+      }
+    )
 
-    increment_version_name(gradle_file_path: "app/build.gradle", version_name: versionName)
-    increment_version_code(gradle_file_path: "app/build.gradle", version_code: versionCode)
+
+#     increment_version_name(gradle_file_path: "app/build.gradle", version_name: versionName)
+#     increment_version_code(gradle_file_path: "app/build.gradle", version_code: versionCode)
 
     build_android_app(task:"clean assemble")
 
