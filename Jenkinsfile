@@ -11,8 +11,7 @@ pipeline {
     stages {
         stage('Configure Environment') {
             steps {
-                bat"bundle exec fastlane add_plugin increment_version_code"
-                bat"bundle exec fastlane add_plugin increment_version_name"
+                bat"bundle exec add_plugin android_versioning"
             }
         }
 
