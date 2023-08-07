@@ -24,10 +24,14 @@ default_platform(:android)
   end
 
   desc "Submit a new Beta Build to Firebase App Distribution"
-  lane :deploy_to_firebase do
-#   |options|
-#
-#     build_variant = options[:build_variant] || 'release' # Default to 'release' if no variant is specified
+  lane :deploy_to_firebase do |options|
+
+    versionCode = ENV['VERSION_CODE']
+    versionName = ENV['VERSION_NAME']
+    puts "VERSION CODE = " + versionCode
+    puts "VERSION NAME = " + versionName
+    increment_version_code({ version_code: versionCode})
+    increment_version_name({gradle_file_path: "app/build.gradle",version_name: versionName})
 
     build
 
