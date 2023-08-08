@@ -28,6 +28,7 @@ default_platform(:android)
 
     versionCode = ENV['VERSION_CODE']
     versionName = ENV['VERSION_NAME']
+    releaseNotes = ENV['RELEASE_NOTES']
 
     increment_version_code({gradle_file_path: "app/build.gradle", version_code: versionCode})
     increment_version_name({gradle_file_path: "app/build.gradle", version_name: versionName})
@@ -36,7 +37,7 @@ default_platform(:android)
 
     firebase_app_distribution(
         app: "1:900612138286:android:a321b7388df40ea76bc6bf",
-        release_notes: options[:release_notes],
+        release_notes: "${releaseNotes}",
         firebase_cli_token: "1//0g2YwJ-ZSs1BgCgYIARAAGBASNwF-L9Irk-jUQlzHZuP9x1-3ckcjDIwzjxi5hUxrs_Maydo2_jduZB3vQHHQjYJPmcS_kR5bM6w"
     )
   end
