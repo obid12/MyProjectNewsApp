@@ -34,10 +34,9 @@ default_platform(:android)
     increment_version_code({gradle_file_path: "app/build.gradle", version_code: versionCode})
     increment_version_name({gradle_file_path: "app/build.gradle", version_name: versionName})
 
-    build_android_app(task:"clean assemble", build_type: buildVariant)
-
     case buildVariant
     when "debug"
+      build_android_app(task:"clean assemble", build_type: buildVariant)
       firebase_app_distribution(
           app: "1:900612138286:android:a321b7388df40ea76bc6bf",
           release_notes: releaseNotes,
