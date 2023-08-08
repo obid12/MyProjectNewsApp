@@ -43,9 +43,9 @@ default_platform(:android)
           firebase_cli_token: "1//0g2YwJ-ZSs1BgCgYIARAAGBASNwF-L9Irk-jUQlzHZuP9x1-3ckcjDIwzjxi5hUxrs_Maydo2_jduZB3vQHHQjYJPmcS_kR5bM6w"
       )
     when "beta"
-      UI.message("ini beta")
+      puts "ini beta"
     when "release"
-      UI.message("ini release")
+      puts "ini release"
     end
 
   end
