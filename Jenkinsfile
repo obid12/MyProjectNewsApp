@@ -38,12 +38,12 @@ pipeline {
             steps {
                 dir(env.LOCATION_PROJECT) {
                     bat
-                    """
+                    "
                     bundle exec fastlane deploy_to_firebase VERSION_NAME:${VERSION_NAME}
                     VERSION_CODE:${VERSION_CODE}
                     RELEASE_NOTES:\"${RELEASE_NOTES}\"
                     BUILD_VARIANT:'${BUILD_VARIANT}'
-                    """
+                    "
                 }
             }
         }
