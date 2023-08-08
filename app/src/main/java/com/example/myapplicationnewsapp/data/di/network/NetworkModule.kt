@@ -1,8 +1,6 @@
 package com.example.myapplicationnewsapp.data.di.network
 
 import android.content.Context
-import com.chuckerteam.chucker.api.ChuckerCollector
-import com.chuckerteam.chucker.api.ChuckerInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,15 +21,7 @@ object NetworkModule {
   fun provideRetrofit(okHttpClient: OkHttpClient, @ApplicationContext context: Context): Retrofit {
     return Retrofit.Builder().apply {
       addConverterFactory(GsonConverterFactory.create())
-      client(
-        okHttpClient.newBuilder().addInterceptor(
-          ChuckerInterceptor.Builder(context)
-            .collector(ChuckerCollector(context, true))
-            .redactHeaders(emptySet())
-            .alwaysReadResponseBody(false)
-            .build()
-        ).build()
-      )
+      client(okHttpClient)
       baseUrl("https://newsapi.org/v2/")
     }.build()
   }
